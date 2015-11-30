@@ -13,7 +13,7 @@ public class Testcontroller {
 	private ZzallService zzallService;
 	
 	
-	@RequestMapping("/index")
+	@RequestMapping("/index.action")
 	public String index()throws Exception{
 		return "index";
 	}
