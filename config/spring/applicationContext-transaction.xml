@@ -38,7 +38,7 @@
 </tx:advice>
 <!-- aop -->
 <aop:config>
-	<aop:advisor order="10" advice-ref="txAdvice" pointcut="execution(* cn.link.drugstore.service.impl.*.*(..))"/>
+	<aop:advisor order="10" advice-ref="txAdvice" pointcut="execution(* cn.link.tcm.service.impl.*.*(..))"/>
 </aop:config>
 
 </beans>

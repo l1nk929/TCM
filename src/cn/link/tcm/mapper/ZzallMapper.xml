@@ -9,6 +9,13 @@
 <select id="findZzallById" parameterType="int" resultType="zzall">
 		SELECT id,zhengzhuang_name,source_id,type FROM ZZALL WHERE id=#{value}
 </select>
-	
+
+<select id="findAllZzall" resultType="zzall">
+		SELECT id,zhengzhuang_name,source_id,type FROM ZZALL
+</select>
+
+<update id="updateZzallType" parameterType="zzall">
+	update zzall set type=#{type} where id=#{id}
+</update>
 
 </mapper>
