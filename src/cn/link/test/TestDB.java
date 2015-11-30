@@ -26,9 +26,9 @@ public class TestDB {
 	@Before
 	public void init() throws Exception{
 		Class.forName("com.mysql.jdbc.Driver");
-		conn1 = DriverManager.getConnection("jdbc:mysql://localhost:3306/zhengzhuang?user=root&password=123456");
-		conn8 = DriverManager.getConnection("jdbc:mysql://localhost:3306/kde_cm?user=root&password=123456");
-		conn2 = DriverManager.getConnection("jdbc:mysql://localhost:3306/union_kde_cm_data?characterEncoding=utf8&user=root&password=123456");
+		conn1 = DriverManager.getConnection("jdbc:mysql://211.83.111.237:3306/zhengzhuang?user=root&password=123456");
+		conn8 = DriverManager.getConnection("jdbc:mysql://211.83.111.237:3306/kde_cm?user=root&password=123456");
+		conn2 = DriverManager.getConnection("jdbc:mysql://211.83.111.237:3306/union_kde_cm_data?characterEncoding=utf8&user=root&password=123456");
 		stmt1 = conn1.createStatement();
 	}
 	//导入中国药典数据到全集表中
@@ -77,7 +77,229 @@ public class TestDB {
 	}
 	
 	
+	//导入CNKI症状数据到全集表中
+		@Test
+		public void initCnki() throws Exception{
+			
+			stmt2 = conn2.prepareStatement("insert into zzall (zhengzhuang_name,source_id,type) values (?,?,?)");
+			ResultSet rs = stmt1.executeQuery("select zhengzhuang from neikexue;");
+			List<String> zzs = new ArrayList<String>();
+			HashMap<String,Integer> map = new HashMap<String, Integer>();
+			while(rs.next()){
+					String temp = rs.getString(1);
+					
+					
+					
+					if(temp!=null){
+						temp = temp.trim();
+						if(!temp.equals("")){
+							
+							//System.out.println(temp);
+							String[] temps = temp.split("，");
+							
+							for(String s :temps){
+								System.out.println(s);
+								map.put(s, 1);
+								
+							}
+						    zzs.add(temp);
+						}
+						
+					}
+						
+					
+					
+			}
+			
+			for(Entry<String, Integer> et :map.entrySet()){
+//				stmt2.setString(1, et.getKey());
+//				stmt2.setInt(2, 4);
+//				stmt2.setInt(3, 10);
+//				stmt2.executeUpdate();
+				System.out.println(et.getKey());
+			}
+			
+		}
 	
+	
+		@Test
+		public void initNeikexue() throws Exception{
+			
+			stmt2 = conn2.prepareStatement("insert into zzall (zhengzhuang_name,source_id,type) values (?,?,?)");
+			ResultSet rs = stmt1.executeQuery("select zhengzhuang from neikexue;");
+			List<String> zzs = new ArrayList<String>();
+			HashMap<String,Integer> map = new HashMap<String, Integer>();
+			while(rs.next()){
+					String temp = rs.getString(1);
+					
+					
+					if(temp!=null){
+						temp = temp.trim();
+						temp = temp.replace(",", "，");
+						if(!temp.equals("")){
+							
+							String[] temps = temp.split("，");
+							
+							for(String s :temps){
+								System.out.println(s);
+								map.put(s, 1);
+								
+							}
+						    zzs.add(temp);
+						}
+						
+					}
+						
+						
+					
+					
+			}
+			
+			for(Entry<String, Integer> et :map.entrySet()){
+				stmt2.setString(1, et.getKey());
+				stmt2.setInt(2, 5);
+				stmt2.setInt(3, 10);
+				stmt2.executeUpdate();
+				System.out.println(et.getKey());
+			}
+			
+		}
+		
+		
+		@Test
+		public void initNeikexueZhusu() throws Exception{
+			
+			stmt2 = conn2.prepareStatement("insert into zzall (zhengzhuang_name,source_id,type) values (?,?,?)");
+			ResultSet rs = stmt1.executeQuery("select zhuzheng from neikexue;");
+			List<String> zzs = new ArrayList<String>();
+			HashMap<String,Integer> map = new HashMap<String, Integer>();
+			while(rs.next()){
+					String temp = rs.getString(1);
+					
+					
+					if(temp!=null){
+						temp = temp.trim();
+						temp = temp.replace("、", "，");
+						temp = temp.replace("；", "，");
+						if(!temp.equals("")){
+							
+							String[] temps = temp.split("，");
+							
+							for(String s :temps){
+								System.out.println(s);
+								map.put(s, 1);
+								
+							}
+						    zzs.add(temp);
+						}
+						
+					}
+						
+						
+					
+					
+			}
+			
+			for(Entry<String, Integer> et :map.entrySet()){
+				stmt2.setString(1, et.getKey());
+				stmt2.setInt(2, 7);
+				stmt2.setInt(3, 10);
+				stmt2.executeUpdate();
+				System.out.println(et.getKey());
+			}
+			
+		}
+	
+		
+
+		@Test
+		public void initZhongxiYi() throws Exception{
+			
+			stmt2 = conn2.prepareStatement("insert into zzall (zhengzhuang_name,source_id,type) values (?,?,?)");
+			ResultSet rs = stmt1.executeQuery("select zhuyaozhengzhuang from zhong_xiyi;");
+			List<String> zzs = new ArrayList<String>();
+			HashMap<String,Integer> map = new HashMap<String, Integer>();
+			while(rs.next()){
+					String temp = rs.getString(1);
+					
+					
+					if(temp!=null){
+						temp = temp.trim();
+						if(!temp.equals("")){
+							String[] temps = temp.split("；");
+							for(String s:temps){
+								s= s.trim();
+								if(!s.equals("")){
+									System.out.println(s);
+									
+									map.put(s, 1);
+								}
+								
+							}
+							
+						}
+						
+					}
+						
+						
+					
+					
+			}
+			
+			for(Entry<String, Integer> et :map.entrySet()){
+//				stmt2.setString(1, et.getKey());
+//				stmt2.setInt(2, 6);
+//				stmt2.setInt(3, 10);
+//				stmt2.executeUpdate();
+				System.out.println(et.getKey());
+			}
+			
+		}
+		
+		
+		@Test
+		public void initZhongxiYiZhuyaoTizheng() throws Exception{
+			
+			stmt2 = conn2.prepareStatement("insert into zzall (zhengzhuang_name,source_id,type) values (?,?,?)");
+			ResultSet rs = stmt1.executeQuery("select zhuyaotizheng from zhong_xiyi;");
+			List<String> zzs = new ArrayList<String>();
+			HashMap<String,Integer> map = new HashMap<String, Integer>();
+			while(rs.next()){
+					String temp = rs.getString(1);
+					
+					
+					if(temp!=null){
+						temp = temp.trim();
+						if(!temp.equals("")){
+							String[] temps = temp.split("；");
+							for(String s:temps){
+								s= s.trim();
+								if(!s.equals("")){
+									System.out.println(s);
+									
+									map.put(s, 1);
+								}
+								
+							}
+							
+						}
+						
+					}
+						
+						
+					
+					
+			}
+			
+			for(Entry<String, Integer> et :map.entrySet()){
+				stmt2.setString(1, et.getKey());
+				stmt2.setInt(2, 8);
+				stmt2.setInt(3, 10);
+				stmt2.executeUpdate();
+				System.out.println(et.getKey());
+			}
+			
+		}
 	
 //	@Test
 //	public void initAllToGuifan() throws Exception{
