@@ -19,7 +19,7 @@
   </head>
   
   <body>
-    <center><h3>症状规范</h3></center>
+    <center><h4>症状规范</h4></center>
    
     <a target="left" href="/TcmDataStandard/left.action?type=1&page_no=0">已规范症状</a>
     <a target="left" href="/TcmDataStandard/left.action?type=10&page_no=0">待规范症状</a>

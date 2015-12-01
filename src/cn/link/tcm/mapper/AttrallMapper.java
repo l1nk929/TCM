@@ -20,5 +20,7 @@ public interface AttrallMapper {
 	public void addAttrall(Attrall attrall);
 	
 	public List<Attrall> findAttrsByParentId(int id);
+
+	public List<Attrall> findAllAttrall();
 	
 }

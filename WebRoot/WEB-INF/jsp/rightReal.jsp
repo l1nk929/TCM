@@ -53,25 +53,12 @@
     	
  <div id="element_id"> 
   <select class="level-1">
-  	<option value="1">四诊</option>
   </select> 
   <select class="level-2">
-  	<option value="1">望诊</option>
-  	<option value="1">闻诊</option>
-  	<option value="1">问诊</option>
-  	<option value="1">切诊</option>
   </select> 
   <select class="level-3">
-  	<option value="1">望神</option>
-  	<option value="1">望色</option>
-  	<option value="1">望头面</option>
-  	<option value="1">望面部</option>
-  	<option value="1">望目</option>
   </select>
   <select class="level-4">
-  	<option value="1">目色</option>
-  	<option value="1">目形</option>
-  	<option value="1">目态</option>
   </select> 
   
   
@@ -86,28 +73,13 @@
     	
    
   </body>
-<!--   <script type="text/javascript">
+<script type="text/javascript">
 $('#element_id').cxSelect({ 
   selects: ['level-1', 'level-2', 'level-3', 'level-4', 'level-5'], 
-  jsonName: 'name', 
-  jsonValue: 'value', 
+  jsonName: 'attr_name', 
+  jsonValue: 'code', 
   jsonSub: 'sub', 
-  url: [ 
-    {name:'A', value: '1', sub: [ 
-      {name: 'A-1', value: '2', sub: [ 
-        {name: 'A-1-1', value: '11'} 
-      ]},
-      {name: 'A-2', value: '3', sub: [ 
-        {name: 'A-2-1', value: '34'} 
-      ]} 
-    ]}, 
-    {name:'B', value: '5', sub: [ 
-      {name: 'B-1', value: '8', sub: [ 
-        {name: 'B-1-1', value: '16'} 
-      ]} 
-    ]} 
-  ] 
+  url: '${pageContext.request.contextPath}/requestAttrJson.action'
 }); 
   </script>
-   -->
 </html>

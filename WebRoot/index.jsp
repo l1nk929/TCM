@@ -19,7 +19,7 @@
   </head>
   
    
-<frameset rows="10%,70%,20%">
+<frameset rows="12%,70%,18%">
 
 	  <frame src="head.jsp">
 	  <frame src="middle.jsp">

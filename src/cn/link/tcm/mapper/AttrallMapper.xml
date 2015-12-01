@@ -26,6 +26,8 @@
 
 
 
-
+<select id="findAllAttrall"  resultType="attrall">
+	SELECT id,attr_name,attr_dependency,parent_id,code,level FROM attrall;
+</select>
 
 </mapper>

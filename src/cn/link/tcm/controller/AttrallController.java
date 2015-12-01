@@ -8,8 +8,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import cn.link.tcm.po.Attrall;
+import cn.link.tcm.po.AttrallLevel;
 import cn.link.tcm.po.AttrallListVo;
 import cn.link.tcm.po.Zzall;
 import cn.link.tcm.po.ZzallPageVo;
@@ -37,6 +39,13 @@ public class AttrallController {
 		
 		
 		return "rightReal";
+		
+	}
+	@RequestMapping("/requestAttrJson")
+	public @ResponseBody AttrallLevel requestAttrJson(){
+		AttrallLevel attrallLevel = attrService.getAttrallLevel();
+		
+		return attrallLevel;
 		
 	}
 }
