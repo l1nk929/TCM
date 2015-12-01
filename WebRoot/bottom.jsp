@@ -1,6 +1,5 @@
 <%@ page  contentType="text/html;charset=UTF-8" pageEncoding="UTF-8"%>
 
-
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
   <head>
@@ -18,12 +17,11 @@
 	-->
   </head>
   
-   
-<frameset rows="10%,70%,20%">
+ <frameset cols="50%,50%">
 
-	  <frame src="head.jsp">
-	  <frame src="middle.jsp">
-	  <frame src="bottom.jsp">
+  <frame name="bleft" src="bleft.jsp">
+  <frame name="bright" src="bright.jsp">
 
 </frameset>
+
 </html>

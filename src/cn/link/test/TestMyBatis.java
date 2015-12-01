@@ -31,7 +31,13 @@ public class TestMyBatis {
 	public void setupInit(){
 		applicationContext = new ClassPathXmlApplicationContext("classpath:spring/applicationContext-dao.xml");
 	}
-
+	@Test
+	public void testService() throws Exception{
+		ZzallMapper zzallMapper = (ZzallMapper) applicationContext.getBean("zzallMapper");
+		Zzall zz = zzallMapper.findZzallById(302);
+		System.out.println(zz);
+		
+	}
 	
 	@Test
 	public void testZzall() throws Exception{

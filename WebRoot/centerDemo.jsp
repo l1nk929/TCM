@@ -11,19 +11,23 @@
 	<meta http-equiv="cache-control" content="no-cache">
 	<meta http-equiv="expires" content="0">    
 	<meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
-	<meta http-equiv="description" content="症状规范主页">
+	<meta http-equiv="description" content="çç¶è§èä¸»é¡µ">
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 	<!--
 	<link rel="stylesheet" type="text/css" href="styles.css">
 	-->
   </head>
   
+  <body>
+    <a target="right" href="rightDemo.jsp"><h3>咳嗽</h3></a>
+    
+    <a target="right" href="rightDemo.jsp"><h3>发烧</h3></a>
+    
+    <form action="">
+    	规范症状：<input type="text"></input>  
+    	<input type="button" value="添加"></input>  
+    </form>
+    	
    
-<frameset rows="10%,70%,20%">
-
-	  <frame src="head.jsp">
-	  <frame src="middle.jsp">
-	  <frame src="bottom.jsp">
-
-</frameset>
+  </body>
 </html>

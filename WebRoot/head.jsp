@@ -18,12 +18,11 @@
 	-->
   </head>
   
+  <body>
+    <center><h3>症状规范</h3></center>
    
-<frameset rows="10%,70%,20%">
-
-	  <frame src="head.jsp">
-	  <frame src="middle.jsp">
-	  <frame src="bottom.jsp">
-
-</frameset>
+    <a target="left" href="/TcmDataStandard/left.action?type=1&page_no=0">已规范症状</a>
+    <a target="left" href="/TcmDataStandard/left.action?type=10&page_no=0">待规范症状</a>
+    
+  </body>
 </html>

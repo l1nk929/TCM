@@ -18,12 +18,12 @@
 	-->
   </head>
   
-   
-<frameset rows="10%,70%,20%">
+<frameset cols="20%,40%,40%">
 
-	  <frame src="head.jsp">
-	  <frame src="middle.jsp">
-	  <frame src="bottom.jsp">
+  <frame name="left" src="left.jsp">
+  <frame name="center" src="center.jsp">
+  <frame name="right" src="right.jsp">
 
 </frameset>
+
 </html>

@@ -15,8 +15,8 @@
 <!-- 商品管理的service -->
 <!--  <bean id="itemsService" class="cn.itcast.ssm.service.impl.ItemsServiceImpl"/> -->
 <bean id="zzallService" class="cn.link.tcm.service.impl.ZzallServiceImpl"></bean>
-
- 
+<bean id="ZzguifanService" class="cn.link.tcm.service.impl.ZzguifanServiceImpl"></bean>
+ <bean id="attrService" class="cn.link.tcm.service.impl.AttrServiceImpl"></bean>
 	
 
 </beans>

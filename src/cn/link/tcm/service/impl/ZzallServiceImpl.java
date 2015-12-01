@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import cn.link.tcm.mapper.ZzallMapper;
 import cn.link.tcm.po.Zzall;
+import cn.link.tcm.po.ZzallPageVo;
 import cn.link.tcm.service.ZzallService;
 
 public class ZzallServiceImpl implements ZzallService {
@@ -27,6 +28,29 @@ public class ZzallServiceImpl implements ZzallService {
 		
 		return tempList;
 		
+	}
+
+	@Override
+	public List<Zzall> findAllZzallByTypeAndPage(ZzallPageVo page) {
+		List<Zzall> tempList = zzallMapper.findAllZzallByTypeAndPage(page);
+		if(tempList.size()<page.getPage_total())
+		{
+			page.setNext(-1);
+		}
+		else{
+			page.setNext(page.getPage_no()+page.getPage_total());
+		}
+		if(page.getPage_no()==0){
+			page.setPrevious(-1);
+		}
+		else{
+			if(page.getPage_no()<=page.getPage_total())
+				page.setPrevious(0);
+			else
+				page.setPrevious(page.getPage_no()-page.getPage_total());
+		}
+		
+		return tempList;
 	}
 
 }

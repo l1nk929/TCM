@@ -18,4 +18,8 @@
 	update zzall set type=#{type} where id=#{id}
 </update>
 
+<select id="findAllZzallByTypeAndPage" parameterType="zzallPageVo" resultType="zzall">
+		SELECT id,zhengzhuang_name,source_id,type FROM ZZALL where type=#{type} limit #{page_no},#{page_total}
+</select>
+
 </mapper>

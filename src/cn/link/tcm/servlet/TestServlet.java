@@ -7,14 +7,21 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
+import cn.link.tcm.service.ZzallService;
+
 public class TestServlet extends HttpServlet{
 
+	@Autowired
+	private ZzallService zzallService;
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp)
 			throws ServletException, IOException {
 		super.doGet(req, resp);
-		
-		
+		int a = zzallService.findZzallByType(10).size();
+		System.out.println("aaaaaaa"+a);
+		resp.getWriter().write("a");
 		
 		
 	}
