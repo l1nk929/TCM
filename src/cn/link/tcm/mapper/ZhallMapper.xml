@@ -15,4 +15,21 @@
 </insert>
 
 
+<select id="findZhallById" parameterType="int" resultType="zhall">
+		SELECT id,zhenghou_name,source_id,type FROM zhall WHERE id=#{value}
+</select>
+
+<select id="findAllZhall" resultType="zhall">
+		SELECT id,zhenghou_name,source_id,type FROM ZHALL
+</select>
+
+<update id="updateZhallType" parameterType="zhall">
+	update zhall set type=#{type} where id=#{id}
+</update>
+
+<select id="findAllZhallByTypeAndPage" parameterType="zhallPageVo" resultType="zhall">
+		SELECT id,zhenghou_name,source_id,type FROM zhall where type=#{type} limit #{page_no},#{page_total}
+</select>
+
+
 </mapper>
